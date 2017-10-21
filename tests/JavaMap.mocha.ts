@@ -16,10 +16,10 @@ declare global {
     interface Number extends Equalable {}
 }
 Array.prototype.equals = function (o) {
-    return this == 0 || this.length == o.length && this.every((el, i) => el.equals(o[i]))
+    return this == o || this.length == o.length && this.every((el, i) => el.equals(o[i]))
 }
 Array.prototype.hashCode = function () {
-    return this.reduce((acc, current) => acc * 31 + current, 0)
+    return this.reduce((acc, current) => acc * 31 + current.hashCode(), 0)
 }
 Number.prototype.equals = function (o) { return this == o }
 Number.prototype.hashCode = function () { return this | 0 }

@@ -1,4 +1,3 @@
-import {assert} from 'chai'
 import {Equalable, int} from './Equalable'
 
 /**
@@ -58,7 +57,7 @@ export class JavaMap<K extends Equalable & {hashCodes?(): int[], like?(x: any): 
      */
     set2(key: K, val: V): boolean {
         const hashCode = key.hashCode(), bucket = this._map.get(hashCode)
-        assert(hashCode === (hashCode | 0))
+        //assert(hashCode === (hashCode | 0))
         if (bucket) {
             const pairIndex = bucket.findIndex(pair => pair.key.equals(key))
             if (-1 == pairIndex) {
@@ -76,7 +75,7 @@ export class JavaMap<K extends Equalable & {hashCodes?(): int[], like?(x: any): 
 
     has(key: K): boolean {
         const hashCode = key.hashCode(), bucket = this._map.get(hashCode)
-        assert(hashCode === (hashCode | 0))
+        //assert(hashCode === (hashCode | 0))
         return undefined !== bucket && bucket.some(pair => pair.key.equals(key))
     }
 

@@ -40,5 +40,6 @@
     "test:ci": "npm run build && npm run lint && npm test"
   },
   "types": "index.d.ts",
+  "umdGlobal": "javasetmap_ts",
   "version": "1.0.0"
 }
