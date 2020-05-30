@@ -30,7 +30,7 @@
     "url": "git+https://github.com/NaridaL/javasetmap.ts.git"
   },
   "scripts": {
-    "build": "tsc & rollup -c",
+    "build": "tsc && rollup -c",
     "config": "node node_modules/naridal-tslib-config && npm install",
     "test": "(cd test && mocha --require ts-node/register ./**/*.mocha.js ./**/*.mocha.ts)",
     "test:ci": "npm run build && npm test",
