@@ -6,16 +6,14 @@
   "dependencies": {},
   "description": "Java-style Set and Map collections (on `{ hashCode(): int, equals(x: any): boolean}` objects) written in TypeScript.",
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "chai": "^4.1.2",
-    "mocha": "^3.5.0",
-    "naridal-tslib-config": "^1.0.0",
-    "rollup": "^0.49.2",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "ts-node": "^3.3.0",
-    "tslint": "^5.7.0",
-    "typescript": "^2.5.2",
-    "uglify-es": "^3.0.28"
+    "@types/chai": "^4.2.11",
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0",
+    "prettier": "^2.0.5",
+    "rollup": "^2.11.2",
+    "rollup-plugin-sourcemaps": "^0.6.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
   },
   "homepage": "https://github.com/NaridaL/javasetmap.ts#readme",
   "keywords": [
@@ -32,14 +30,16 @@
     "url": "git+https://github.com/NaridaL/javasetmap.ts.git"
   },
   "scripts": {
-    "build": "tsc && rollup -c && rollup -c rollup.module.config.js && npm run minify",
+    "build": "tsc & rollup -c",
     "config": "node node_modules/naridal-tslib-config && npm install",
-    "lint": "tslint --project tsconfig.json",
-    "minify": "uglifyjs dist/bundle.js --output dist/bundle.min.js --compress --mangle && uglifyjs dist/bundle.module.js --output dist/bundle.module.min.js --compress --mangle",
-    "test": "(cd tests && mocha --require ts-node/register ./**/*.mocha.js ./**/*.mocha.ts)",
-    "test:ci": "npm run build && npm run lint && npm test"
+    "test": "(cd test && mocha --require ts-node/register ./**/*.mocha.js ./**/*.mocha.ts)",
+    "test:ci": "npm run build && npm test",
+    "prettier": "prettier -l --write \"{src,test}/**/*.ts\""
   },
   "types": "index.d.ts",
   "umdGlobal": "javasetmap_ts",
-  "version": "1.1.0"
+  "version": "1.1.0",
+  "prettier": {
+    "semi": false
+  }
 }
