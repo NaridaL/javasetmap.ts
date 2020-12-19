@@ -3,6 +3,8 @@
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "declaration": true,
+    "declarationDir": "lib",
+    "declarationMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": [
@@ -14,7 +16,7 @@
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "outDir": "out",
+    "outDir": "lib",
     "rootDir": "src",
     "sourceMap": true,
     "strict": true,
