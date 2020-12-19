@@ -13,7 +13,7 @@ export default {
       sourcemap: true,
       name: pkg.umdGlobal,
       dir: "lib",
-      sourcemapExcludeSources: true
+      sourcemapExcludeSources: true,
     })),
   external: Object.keys(pkg.dependencies || {}),
   plugins: [typescriptPlugin({ typescript })],
