@@ -37,7 +37,7 @@
     "prepare": "rollup --config",
     "config": "node node_modules/naridal-tslib-config && npm install",
     "test": "(cd test && mocha --require ts-node/register ./**/*.mocha.js ./**/*.mocha.ts)",
-    "test:ci": "npm run build && npm test",
+    "test:ci": "npm test",
     "prettier": "prettier -l --write \"{src,test}/**/*.ts\"",
     "postversion": "git push && git push --tags"
   },
